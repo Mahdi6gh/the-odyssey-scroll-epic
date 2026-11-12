@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Odyssey — A Scroll Epic</title>
+<meta name="description" content="Christopher Nolan's The Odyssey, retold in red-figure clay, fire and sea. Scroll to sail.">
+<meta name="theme-color" content="#F3EAD8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=GFS+Didot&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-locked">
+
+<!-- ============ FIXED LAYERS ============ -->
+<div class="backdrop" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="flash" aria-hidden="true"></div>
+<div class="lb lb--top" aria-hidden="true"></div>
+<div class="lb lb--bottom" aria-hidden="true"></div>
+
+<div id="loader" aria-hidden="true">
+  <div class="loader__grid"></div>
+  <div class="loader__word">ΟΔΥΣΣΕΙΑ</div>
+  <div class="loader__bar"><span></span></div>
+</div>
+
+<header class="hud">
+  <div class="hud__brand"><b>The Odyssey</b><span class="hud__chapter"><i class="hud__num">00</i><i class="hud__name">The Bow</i></span></div>
+  <button class="owl" aria-label="Open chapters" aria-expanded="false">
+    <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6c-9 0-16 7-16 16v14c0 3 2 6 6 6h20c4 0 6-3 6-6V22c0-9-7-16-16-16z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="22" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="31" cy="22" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle class="owl__pupil" cx="17" cy="22" r="1.8" fill="currentColor"/><circle class="owl__pupil" cx="31" cy="22" r="1.8" fill="currentColor"/><path d="M22 28l2 3 2-3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    <span>Index</span>
+  </button>
+  <div class="hud__counters">
+    <div><small>Years from home</small><b id="c-years">0</b></div>
+    <div><small>Men alive</small><b id="c-men">600</b></div>
+  </div>
+  <button class="sound" aria-label="Toggle sound" aria-pressed="false">
+    <i></i><i></i><i></i><i></i><span>Sound</span>
+  </button>
+</header>
+
+<nav class="threads" aria-label="Story threads">
+  <div class="threads__line" data-thread="gods"><span>Gods</span></div>
+  <div class="threads__line" data-thread="sea"><span>Sea</span></div>
+  <div class="threads__line" data-thread="ithaca"><span>Ithaca</span></div>
+</nav>
+
+<nav class="menu" aria-hidden="true">
+  <ol></ol>
+</nav>
+
+<main id="story">
+
+<!-- ============ 00 · COLD OPEN : THE BOW GATE ============ -->
+<section class="chapter chapter--gate" id="gate" data-thread="ithaca" data-tone="dark" data-title="The Bow">
+  <div class="gate__video duo"><video src="media/video/beggar-hall.mp4" muted playsinline loop preload="auto"></video></div>
+  <div class="gate__inner">
+    <p class="kicker">Ithaca — the twentieth year</p>
+    <h1 class="gate__title split">No man here can string it.</h1>
+    <p class="gate__lede">A beggar stands in the king's hall. The suitors laugh. Penelope sets out the great bow of Odysseus. <em>Prove them wrong.</em></p>
+    <div class="bow" id="bow-gate">
+      <img src="media/img/bow.webp" alt="The great bow of Odysseus, unstrung" draggable="false">
+      <svg viewBox="0 0 1024 434" class="bow__svg" aria-hidden="true">
+        <path class="bow__string" d="" />
+        <g class="bow__arrow" opacity="0"><line x1="0" y1="0" x2="-260" y2="0"/><path d="M0 0l-22-9v18z"/><path d="M-260 0l-18-10M-260 0l-18 10M-248 0l-18-10M-248 0l-18 10"/></g>
+        <circle class="bow__notch" r="16" />
+        <circle class="bow__handle" r="22" />
+      </svg>
+      <p class="bow__hint hand">drag the string to the far notch →</p>
+    </div>
+    <button class="gate__skip">skip the trial</button>
+  </div>
+</section>
+
+<!-- ============ 01 · TITLE ============ -->
+<section class="chapter chapter--title" id="title" data-thread="gods" data-tone="light" data-title="Twenty Years Earlier">
+  <p class="title__earlier split">Twenty years earlier.</p>
+  <div class="title__art"><img src="media/img/hero-flame.webp" alt="Odysseus leaping through waves of fire and foam" data-speed="0.85"></div>
+  <h2 class="title__word"><span>The</span> Odyssey</h2>
+  <p class="title__by">A film by Christopher Nolan · retold in clay and fire</p>
+  <div class="scrollcue"><span>Scroll to sail</span><i></i></div>
+</section>
+
+<!-- ============ 02 · THE GODS ============ -->
+<section class="chapter chapter--gods" id="gods" data-thread="gods" data-tone="light" data-title="The Council of Olympus">
+  <div class="museum" data-flip>
+    <figure class="museum__frame">
+      <img loading="lazy" decoding="async" src="media/img/p-olympians.webp" alt="Assembly of the Olympian gods">
+      <figcaption><b>Assembly of the Olympians</b><span>Oil on canvas · 19th century</span></figcaption>
+    </figure>
+  </div>
+  <div class="narr">
+    <p class="kicker">01 — Olympus</p>
+    <h2 class="split">The gods were already arguing.</h2>
+    <p class="type" data-text="Athena wanted him home. Poseidon wanted him drowned. Zeus wanted only quiet. Between them, one mortal king, the cleverest of the Greeks, was about to be thrown across the sea like a die.">&nbsp;</p>
+    <p class="hand note">three threads · gods, sea, home</p>
+  </div>
+</section>
+
+<!-- ============ 03 · TROY ============ -->
+<section class="chapter chapter--troy" id="troy" data-thread="sea" data-tone="light" data-title="The Fall of Troy" data-years="0" data-men="600">
+  <div class="troy__stage">
+    <div class="museum museum--wide" data-flip>
+      <figure class="museum__frame">
+        <img loading="lazy" decoding="async" src="media/img/p-trojan.webp" alt="The Procession of the Trojan Horse into Troy">
+        <figcaption><b>The Procession of the Trojan Horse</b><span>Giovanni Domenico Tiepolo · c. 1760</span></figcaption>
+      </figure>
+    </div>
+    <div class="vase vase--troy">
+      <img loading="lazy" decoding="async" src="media/img/trojan-horse.webp" alt="Red-figure painting of the Trojan Horse with soldiers hidden inside">
+      <span class="torch" style="--x:61%;--y:24%"></span><span class="torch" style="--x:74%;--y:21%"></span><span class="torch" style="--x:91%;--y:13%"></span><span class="torch" style="--x:83%;--y:22%"></span>
+    </div>
+  </div>
+  <div class="narr narr--right">
+    <p class="kicker">02 — Troy, year ten</p>
+    <h2 class="split">Ten years of war. One wooden lie.</h2>
+    <p class="type" data-text="Odysseus did not break the walls. He was invited through them. Inside the horse, forty men held their breath. By dawn Troy was fire, and the victory tasted of ash.">&nbsp;</p>
+  </div>
+</section>
+
+<!-- ============ 04 · THE VOYAGE (horizontal) ============ -->
+<section class="chapter chapter--voyage" id="voyage" data-thread="sea" data-tone="light" data-title="The Voyage Begins" data-years="1" data-men="600">
+  <div class="voyage__pin">
+    <canvas id="amphora" aria-label="A clay amphora painted with the voyage, turning as you scroll"></canvas>
+    <div class="voyage__track">
+      <article class="panel panel--intro">
+        <p class="kicker">03 — The wine-dark sea</p>
+        <h2 class="split">Twelve ships. Six hundred men. One way home.</h2>
+        <p>The journey is painted around the belly of a jar, the way the Greeks remembered it. Keep scrolling and it turns.</p>
+      </article>
+      <article class="panel">
+        <div class="panel__media duo"><video src="media/video/helmet-dusk.mp4" muted playsinline loop preload="metadata"></video></div>
+        <p class="kicker">The Cicones</p>
+        <h3>The first raid</h3>
+        <p>Drunk on victory, his men linger on the beach. The Cicones return at dawn. Seventy-two die before the oars bite the water.</p>
+      </article>
+      <article class="panel panel--lotus">
+        <svg viewBox="0 0 200 160" class="lotus" aria-hidden="true"><path class="draw" d="M100 150V80M100 80c-30-10-40-40-30-70 20 15 30 40 30 70zm0 0c30-10 40-40 30-70-20 15-30 40-30 70zm0 0c-45 0-70-20-80-45 30-2 60 10 80 45zm0 0c45 0 70-20 80-45-30-2-60 10-80 45z"/></svg>
+        <p class="kicker">The Lotus-Eaters</p>
+        <h3>The sweetest danger</h3>
+        <p>Those who taste the lotus forget home, forget wives, forget their own names. Odysseus drags them back weeping and ties them below the benches.</p>
+      </article>
+      <article class="panel panel--aeolus">
+        <div class="bag" id="bag">
+          <svg viewBox="0 0 200 220" aria-hidden="true"><path class="bag__body" d="M60 70c-40 20-50 90-20 125 20 22 100 22 120 0 30-35 20-105-20-125z"/><path class="bag__neck" d="M70 72c10-12 50-12 60 0"/><path class="bag__cord" d="M66 60c20 14 48 14 68 0"/><circle class="bag__knot" cx="100" cy="64" r="9"/></svg>
+          <p class="hand">pull the silver knot?</p>
+        </div>
+        <p class="kicker">Aeolus, Keeper of Winds</p>
+        <h3>A gift in a bag</h3>
+        <p>Every hostile wind sealed in ox-hide. Ithaca rises on the horizon. Then, while their king sleeps, the crew open it, looking for gold.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 · CYCLOPS ============ -->
+<section class="chapter chapter--cyclops imax-key" id="cyclops" data-thread="sea" data-tone="dark" data-title="The Cyclops" data-years="1" data-men="588">
+  <div class="cyclops__stage">
+    <div class="vase vase--cyclops">
+      <img loading="lazy" decoding="async" src="media/img/cyclops.webp" alt="Black-figure painting of the Cyclops devouring a sailor while Odysseus offers wine">
+      <div class="eye" style="--x:55.6%;--y:27.5%"><i></i></div>
+      <svg class="stake" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="100" y1="100" x2="55.6" y2="27.5"/></svg>
+    </div>
+  </div>
+  <div class="narr narr--center">
+    <p class="kicker">04 — The cave of Polyphemus</p>
+    <h2 class="split">"What is your name, little man?"</h2>
+    <p class="nobody">My name is <b class="nobody__word" data-a="Nobody" data-b="Odysseus">Nobody</b>.</p>
+    <p class="type" data-text="Six men eaten. A stake hardened in fire. One eye put out. And then the pride: from the safety of the ship he shouts his true name, and the sea god hears it.">&nbsp;</p>
+  </div>
+  <div class="museum museum--after" data-flip>
+    <figure class="museum__frame">
+      <img loading="lazy" decoding="async" src="media/img/p-polyphemus.webp" alt="Arnold Böcklin, Odysseus and Polyphemus">
+      <figcaption><b>Odysseus and Polyphemus</b><span>Arnold Böcklin · 1896</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 06 · LAESTRYGONIANS ============ -->
+<section class="chapter chapter--giants" id="giants" data-thread="sea" data-tone="light" data-title="The Giants' Harbor" data-years="2" data-men="45">
+  <div class="giants__strip vase">
+    <img loading="lazy" decoding="async" src="media/img/giants.webp" alt="A lone Odysseus faces an army of armored giants">
+  </div>
+  <div class="narr narr--right">
+    <p class="kicker">05 — Laestrygonia</p>
+    <h2 class="split">Eleven ships went in. None came out.</h2>
+    <p class="type" data-text="The harbor was a trap of cliffs. Giants hurled boulders until the water was wood and blood. Only the ship Odysseus moored outside escaped. Forty-five men. One hull.">&nbsp;</p>
+  </div>
+  <div class="ships" aria-hidden="true"></div>
+</section>
+
+<!-- ============ 07 · CIRCE ============ -->
+<section class="chapter chapter--circe" id="circe" data-thread="sea" data-tone="light" data-title="Circe" data-years="3" data-men="45">
+  <div class="circe__grid">
+    <div class="museum museum--tall" data-flip>
+      <figure class="museum__frame">
+        <img loading="lazy" decoding="async" src="media/img/p-circe.webp" alt="John William Waterhouse, Circe Offering the Cup to Ulysses">
+        <figcaption><b>Circe Offering the Cup to Ulysses</b><span>J. W. Waterhouse · 1891</span></figcaption>
+      </figure>
+    </div>
+    <div class="pig">
+      <div class="pig__frames">
+        <i style="--f:0"></i><i style="--f:1"></i><i style="--f:2"></i><i style="--f:3"></i><i style="--f:4"></i>
+      </div>
+      <button class="moly"><svg viewBox="0 0 40 60" aria-hidden="true"><path d="M20 58V22M20 30c-8-2-12-8-10-16 6 3 9 9 10 16zm0-6c8-2 12-8 10-16-6 3-9 9-10 16z"/><circle cx="20" cy="12" r="6"/><circle cx="14" cy="8" r="4"/><circle cx="26" cy="8" r="4"/></svg>Give him the moly</button>
+    </div>
+  </div>
+  <div class="narr">
+    <p class="kicker">06 — Aeaea</p>
+    <h2 class="split">She offered them a cup.</h2>
+    <p class="type" data-text="Cheese, barley, honey, wine, and a drug. One sip and the men are swine, weeping with human eyes. Hermes gives Odysseus a white flower. It is the only thing on the island she cannot charm.">&nbsp;</p>
+  </div>
+</section>
+
+<!-- ============ 08 · UNDERWORLD / AGAMEMNON ============ -->
+<section class="chapter chapter--underworld imax-key" id="underworld" data-thread="gods" data-tone="dark" data-title="The House of the Dead" data-years="4" data-men="44">
+  <div class="narr narr--center">
+    <p class="kicker">07 — The edge of the world</p>
+    <h2 class="split">To find the way home, he must ask the dead.</h2>
+    <p class="type" data-text="Blood in a trench. The shades come thirsting. Tiresias, blind, tells him the truth: do not touch the cattle of the Sun. Then a king steps out of the dark.">&nbsp;</p>
+  </div>
+  <div class="agam">
+    <div class="agam__frame vase" role="button" tabindex="0" aria-label="Click to turn the living army into the dead">
+      <img class="agam__alive" src="media/img/agamemnon-alive.webp" alt="Agamemnon's army, alive">
+      <img class="agam__dead" src="media/img/agamemnon-dead.webp" alt="The same army as skeletons">
+      <span class="agam__blade"></span>
+    </div>
+    <p class="hand agam__hint">scroll — or click — to see how they came home</p>
+    <div class="agam__text">
+      <h3>Agamemnon, King of Men</h3>
+      <p>He led a thousand ships to Troy and came home a conqueror. His wife Clytemnestra drew him a bath, threw a net over him, and with her lover struck him down. His soldiers died at the feast.</p>
+      <p class="quote">"Never trust the welcome of your own house."</p>
+    </div>
+  </div>
+  <div class="mask">
+    <img loading="lazy" decoding="async" src="media/img/mask-gold.webp" alt="The golden Mask of Agamemnon">
+    <svg viewBox="0 0 100 100" class="mask__cracks" aria-hidden="true">
+      <path d="M50 8 L47 22 L53 31 L46 44 L52 58 L48 72 L51 92"/><path d="M47 22 L35 28 L28 41"/><path d="M53 31 L66 36 L72 50"/><path d="M52 58 L64 66 L70 80"/><path d="M46 44 L34 52 L30 66"/>
+    </svg>
+    <p class="mask__cap">The Mask of Agamemnon · Mycenae, 16th century BC</p>
+  </div>
+</section>
+
+<!-- ============ 09 · SIRENS ============ -->
+<section class="chapter chapter--sirens" id="sirens" data-thread="sea" data-tone="dark" data-title="The Sirens" data-years="5" data-men="44">
+  <div class="sirens__intro">
+    <div class="duo duo--full"><video src="media/video/cliff.mp4" muted playsinline loop preload="metadata"></video></div>
+    <div class="narr narr--center">
+      <p class="kicker">08 — The singing rocks</p>
+      <h2 class="split">Every sailor who heard it is still there.</h2>
+      <p>Circe's warning: stop their ears with wax. And if you must listen, have them bind you to the mast.</p>
+    </div>
+  </div>
+  <div class="sirens__stage">
+    <div class="sirens__sea vase">
+      <img loading="lazy" decoding="async" src="media/img/sirens.webp" alt="Sirens perched on rocks on either side of the sea">
+      <div class="sirens__ship">
+        <img loading="lazy" decoding="async" src="media/img/ship.webp" alt="Odysseus' ship and its rowers">
+        <div class="ears"></div>
+      </div>
+    </div>
+    <div class="wax" aria-label="Lump of beeswax — drag it onto a rower's head"><span></span></div>
+    <div class="sirens__ui">
+      <p class="sirens__step hand" data-step="1">1 · Drag the wax onto each rower <b class="wax-count">0/6</b></p>
+      <p class="sirens__step hand" data-step="2">2 · Now bind your king: wrap the rope around the mast <b class="rope-count">0/3</b></p>
+      <p class="sirens__step hand" data-step="3">3 · Row.</p>
+    </div>
+    <div class="binding">
+      <div class="rig rig--hero" data-rig="hero"></div>
+      <svg class="binding__svg" viewBox="0 0 400 600" aria-hidden="true">
+        <rect class="binding__mast" x="250" y="0" width="34" height="600" rx="4"/>
+        <path class="coil" d="M150 250 C 200 230, 300 230, 320 250 C 300 270, 200 270, 150 260"/>
+        <path class="coil" d="M150 320 C 200 300, 300 300, 320 320 C 300 340, 200 340, 150 330"/>
+        <path class="coil" d="M150 390 C 200 370, 300 370, 320 390 C 300 410, 200 410, 150 400"/>
+      </svg>
+      <div class="rope-end" aria-label="Rope end — drag it around the mast"></div>
+      <div class="rig rig--mast" data-rig="mast"></div>
+    </div>
+  </div>
+  <div class="museum museum--tall museum--after" data-flip>
+    <figure class="museum__frame">
+      <img loading="lazy" decoding="async" src="media/img/p-sirens.webp" alt="Ulysses and the Sirens">
+      <figcaption><b>Ulysses and the Sirens</b><span>Herbert James Draper · 1909</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 10 · SCYLLA & CHARYBDIS ============ -->
+<section class="chapter chapter--strait" id="strait" data-thread="sea" data-tone="dark" data-title="Scylla &amp; Charybdis" data-years="5" data-men="44">
+  <div class="narr narr--center">
+    <p class="kicker">09 — The strait</p>
+    <h2 class="split">Two deaths. Choose one.</h2>
+    <p>On the left, Scylla: six heads on six long necks, a sailor for each mouth. On the right, Charybdis, who swallows the sea three times a day.</p>
+  </div>
+  <div class="strait">
+    <button class="strait__side strait__side--scylla" data-choice="scylla">
+      <svg viewBox="0 0 400 400" aria-hidden="true">
+        <path class="rock" d="M0 400V120c40-20 70-60 120-50 30 6 40 60 80 70v260z"/>
+        <g class="necks"><path d="M120 120C150 200 210 220 250 250"/><path d="M110 140C140 240 200 280 260 300"/><path d="M130 110C190 150 240 170 300 190"/><path d="M100 150C110 260 170 320 220 340"/><path d="M140 100C210 110 270 120 320 140"/><path d="M90 160C80 260 120 330 170 360"/></g>
+        <g class="heads"><circle cx="250" cy="250" r="12"/><circle cx="260" cy="300" r="12"/><circle cx="300" cy="190" r="12"/><circle cx="220" cy="340" r="12"/><circle cx="320" cy="140" r="12"/><circle cx="170" cy="360" r="12"/></g>
+      </svg>
+      <span>Scylla<small>lose six</small></span>
+    </button>
+    <button class="strait__side strait__side--charybdis" data-choice="charybdis">
+      <canvas class="whirl" width="600" height="600" aria-hidden="true"></canvas>
+      <span>Charybdis<small>risk all</small></span>
+    </button>
+  </div>
+  <p class="strait__verdict" aria-live="polite"></p>
+</section>
+
+<!-- ============ 11 · HELIOS & ZEUS ============ -->
+<section class="chapter chapter--zeus imax-key" id="zeus" data-thread="gods" data-tone="dark" data-title="The Cattle of the Sun" data-years="7" data-men="38">
+  <div class="narr">
+    <p class="kicker">10 — Thrinacia</p>
+    <h2 class="split">They were starving. The cattle were sacred.</h2>
+    <p class="type" data-text="A month of storms. Odysseus walks inland to pray. When he returns, the smell of roasting meat is on the wind. The Sun complains to Zeus. Zeus does not argue.">&nbsp;</p>
+  </div>
+  <div class="zeus__art museum" data-flip>
+    <figure class="museum__frame">
+      <img loading="lazy" decoding="async" src="media/img/p-zeus.webp" alt="Zeus hurling a thunderbolt">
+      <figcaption><b>Zeus Hurling a Thunderbolt</b><span>Baroque school · 17th century</span></figcaption>
+    </figure>
+  </div>
+  <div class="wreck vase">
+    <div class="wreck__half wreck__half--l"><img loading="lazy" decoding="async" src="media/img/ship.webp" alt=""></div>
+    <div class="wreck__half wreck__half--r"><img loading="lazy" decoding="async" src="media/img/ship.webp" alt="Odysseus' ship"></div>
+    <svg class="bolt" viewBox="0 0 200 600" preserveAspectRatio="none" aria-hidden="true"><path d="M120 0L80 180L130 190L60 380L110 390L70 600"/></svg>
+  </div>
+  <p class="wreck__line split">Every man drowned. One clung to the wreckage.</p>
+</section>
+
+<!-- ============ 12 · CALYPSO ============ -->
+<section class="chapter chapter--calypso" id="calypso" data-thread="sea" data-tone="light" data-title="Calypso" data-years="14" data-men="1">
+  <div class="calypso__grid">
+    <div class="vase vase--tall"><img loading="lazy" decoding="async" src="media/img/odysseus-vase.webp" alt="Odysseus alone, in red-figure"></div>
+    <div class="narr">
+      <p class="kicker">11 — Ogygia</p>
+      <h2 class="split">Seven years on an island that loved him.</h2>
+      <p class="type" data-text="Calypso offers him forever: no age, no death, no Ithaca. Every day he sits on the shore and stares at the sea. Immortality, it turns out, is just another way of not going home.">&nbsp;</p>
+      <div class="tally" aria-label="Seven years"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 13 · ITHACA ============ -->
+<section class="chapter chapter--ithaca" id="ithaca" data-thread="ithaca" data-tone="light" data-title="Ithaca" data-years="20" data-men="1">
+  <div class="narr narr--center">
+    <p class="kicker">12 — Home</p>
+    <h2 class="split">He comes home a stranger.</h2>
+    <p>Athena gives him the face of a beggar. Only one creature knows him: an old dog on a dung heap, who lifts his head, wags once, and dies.</p>
+  </div>
+  <div class="ithaca__pair">
+    <div class="duo duo--frame"><video src="media/video/argos.mp4" muted playsinline loop preload="metadata"></video></div>
+    <div class="museum" data-flip>
+      <figure class="museum__frame">
+        <img loading="lazy" decoding="async" src="media/img/p-argos.webp" alt="Briton Rivière, Ulysses and Argos">
+        <figcaption><b>Argus</b><span>Briton Rivière · 1873</span></figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="loom">
+    <div class="vase loom__art">
+      <img loading="lazy" decoding="async" src="media/img/penelope.webp" alt="Penelope weaving at her loom">
+      <svg class="loom__threads" viewBox="0 0 1376 768" aria-hidden="true"></svg>
+      <div class="rig rig--penelope" data-rig="penelope"></div>
+    </div>
+    <div class="narr">
+      <h3>Penelope's shroud</h3>
+      <p>"When the shroud is finished, I will choose a husband." By day she weaves. By night she unpicks it. For three years. <span class="hand">scroll to weave · scroll back to unravel</span></p>
+    </div>
+  </div>
+  <div class="hall">
+    <div class="vase hall__art">
+      <img loading="lazy" decoding="async" src="media/img/suitors.webp" alt="The suitors feasting in the hall while a beggar watches">
+      <div class="rig rig--beggar" data-rig="beggar"></div>
+    </div>
+    <div class="duo duo--vertical"><video src="media/video/feast.mp4" muted playsinline loop preload="metadata"></video></div>
+    <p class="hall__line">One hundred and eight suitors. One beggar by the door. <em>Count them.</em></p>
+  </div>
+</section>
+
+<!-- ============ 14 · THE BOW ============ -->
+<section class="chapter chapter--bow imax-key" id="the-bow" data-thread="ithaca" data-tone="dark" data-title="The Contest of the Bow" data-years="20" data-men="1">
+  <div class="bow2">
+    <div class="rig rig--archer" data-rig="hero"></div>
+    <svg class="axes" viewBox="0 0 1200 300" aria-hidden="true">
+      <path class="axes__path" d="M60 150 L1180 150" fill="none"/>
+      <g class="axes__row"></g>
+      <g class="axes__arrow"><line x1="0" y1="0" x2="-90" y2="0"/><path d="M0 0l-16-7v14z"/></g>
+    </svg>
+  </div>
+  <div class="narr narr--center">
+    <p class="kicker">13 — The contest</p>
+    <h2 class="split">He strings it as a singer strings a lyre.</h2>
+    <p>You already strung this bow, at the very beginning. Now watch the arrow you set free. Twelve axe-heads. One line of flight.</p>
+    <p class="type" data-text="The first arrow takes Antinous through the throat, the cup still at his lips. The beggar is gone. The king is home.">&nbsp;</p>
+  </div>
+</section>
+
+<!-- ============ 15 · THE BED ============ -->
+<section class="chapter chapter--bed" id="bed" data-thread="ithaca" data-tone="light" data-title="The Olive Bed" data-years="20" data-men="1">
+  <div class="narr narr--center">
+    <p class="kicker">14 — The last test</p>
+    <h2 class="split">Penelope has one more question.</h2>
+    <p>"Move our bed outside for him," she tells the maid. Only the man who built it knows why that is impossible. <span class="hand">try to move the bed</span></p>
+  </div>
+  <div class="bed">
+    <svg viewBox="0 0 800 520" aria-hidden="true">
+      <g class="bed__roots"><path d="M400 330C380 400 320 430 250 470"/><path d="M400 330C420 410 480 440 560 480"/><path d="M400 330C400 410 395 460 400 520"/><path d="M390 340C340 380 260 380 180 420"/><path d="M410 340C470 370 540 380 640 410"/><path d="M395 360C360 430 330 480 320 520"/><path d="M405 360C440 430 470 480 490 520"/></g>
+      <line class="bed__floor" x1="40" y1="330" x2="760" y2="330"/>
+      <g class="bed__frame">
+        <path d="M120 300h560v30H120z"/><path d="M120 300V170h30v130M650 300V200h30v100"/><path d="M150 210h500"/><path d="M160 250h480" opacity=".5"/>
+        <path class="bed__trunk" d="M385 330V120c-20-40-60-50-90-60M385 150c30-40 70-50 110-50M400 330V110c10-30 30-50 70-70M392 140c-10-30-30-40-55-45"/>
+        <g class="bed__leaves"><ellipse cx="290" cy="58" rx="16" ry="6" transform="rotate(-20 290 58)"/><ellipse cx="500" cy="98" rx="16" ry="6" transform="rotate(15 500 98)"/><ellipse cx="472" cy="38" rx="16" ry="6" transform="rotate(-35 472 38)"/><ellipse cx="335" cy="92" rx="14" ry="5" transform="rotate(25 335 92)"/><ellipse cx="520" cy="80" rx="12" ry="5" transform="rotate(-10 520 80)"/></g>
+      </g>
+    </svg>
+    <p class="bed__reveal">"I built it around a living olive tree. One post is the trunk, still rooted in the earth. No one can move it."</p>
+  </div>
+</section>
+
+<!-- ============ 16 · END ============ -->
+<section class="chapter chapter--end" id="end" data-thread="ithaca" data-tone="light" data-title="Home" data-years="20" data-men="1">
+  <p class="end__line split">She knew him then.</p>
+  <h2 class="end__word">Ithaca</h2>
+  <p class="end__sub">Twenty years. Six hundred men. One way home.</p>
+  <div class="credits">
+    <p><b>The Odyssey</b> · written and directed by Christopher Nolan · after Homer</p>
+    <p>Music · Ludwig Göransson, "Odysseus"</p>
+    <p>Paintings · Tiepolo · Böcklin · Waterhouse · Draper · Rivière · and the anonymous potters of Athens</p>
+    <p class="hand">a fan-made scroll epic</p>
+  </div>
+  <button class="again">Sail again ↑</button>
+</section>
+
+</main>
+
+<audio id="theme" src="media/audio/odysseus-theme.mp3" preload="auto" loop></audio>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/Flip.min.js"></script>
+<script src="vendor/TextPlugin.min.js"></script>
+<script src="vendor/MotionPathPlugin.min.js"></script>
+<script src="vendor/Draggable.min.js"></script>
+<script src="vendor/InertiaPlugin.min.js"></script>
+<script src="vendor/SplitText.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script type="importmap">
+{ "imports": {
+  "three": "./vendor/three.module.js",
+  "animejs": "./vendor/anime.esm.min.js"
+} }
+</script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+node_modules/
+# raw source material (film clips, AI originals, reference paintings); the web-ready copies live in media/
+assets/
+.DS_Store
+Thumbs.db
