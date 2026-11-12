@@ -59,7 +59,9 @@ function runLoader() {
   const step = () => { done++; gsap.to(bar, { width: `${(done / (sources.length + 1)) * 100}%`, duration: 0.4 }); };
   const loads = sources.map(src => new Promise(r => { const i = new Image(); i.onload = i.onerror = () => { step(); r(); }; i.src = src; }));
   loads.push(document.fonts.ready.then(step));
-  return Promise.all([...loads, new Promise(r => setTimeout(r, 1800))]).then(() => {
+  // never hold the curtain longer than six seconds, however slow the connection
+  const ready = Promise.race([Promise.all(loads), new Promise(r => setTimeout(r, 6000))]);
+  return Promise.all([ready, new Promise(r => setTimeout(r, 1800))]).then(() => {
     const tl = gsap.timeline();
     tl.to(bar, { width: '100%', duration: 0.3 })
       .to(word.children, { opacity: 0, y: -30, stagger: 0.04, duration: 0.4 })
